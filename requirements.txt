@@ -1,0 +1,4 @@
+pillow
+pytils
+django-ckeditor
+django

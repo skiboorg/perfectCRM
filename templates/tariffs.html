@@ -1,0 +1,305 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- start page -->
+	<section class="page tariffs tariffs1">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{% static 'img/section/section-ico-11.svg' %}" alt=""></div>
+				<span class="section-subtitle">Техническая поддержка</span>
+				<h2 class="section-title">Выбери пакет и живи спокойно</h2>
+			</div>
+			<div class="tariffs-mob">
+				<ul>
+					<li><a href="#" data-tariffs="tariffs1" class="btn-1">Базовый</a></li>
+					<li><a href="#" data-tariffs="tariffs2" class="btn-2">Бизнес</a></li>
+					<li><a href="#" data-tariffs="tariffs3" class="btn-3">Премиум</a></li>
+				</ul>
+			</div>
+			<div class="tariffs-content">
+				<div class="tariffs-row tariffs-top">
+					<div class="tariffs-col tariffs-col__1"></div>
+					<div class="tariffs-col tariffs-col__2">
+						<i>Базовый</i>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<i>Бизнес</i>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<i>Премиум</i>
+					</div>
+				</div>
+				<div class="tariffs-row tariffs-row__big">
+					<div class="tariffs-col tariffs-col__1">
+						<b>Подписка Cloud/On-Site</b>
+						<br>
+						<span>% от общей актуальной стоимости подписки, указанной на сайте</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<span>Включена в стоимость подписки</span>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<span><b>10%</b>не менее 46 200 руб.</span>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<span><b>15%</b>не менее 924 000 руб.</span>
+					</div>
+				</div>
+				<div class="tariffs-row tariffs-row__big">
+					<div class="tariffs-col tariffs-col__1">
+						<b>Время реакции на инцидент 1 приоритета</b>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<b>4 часа</b>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<b>1 час</b>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<b>30 минут</b>
+					</div>
+				</div>
+				<div class="tariffs-row tariffs-row__big">
+					<div class="tariffs-col tariffs-col__1">
+						<b>Время реакции на инцидент 2-4 приоритета</b>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<b>8 часов</b>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<b>4 часа</b>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<b>2 часа</b>
+					</div>
+				</div>
+				<div class="tariffs-row tariffs-row__big">
+					<div class="tariffs-col tariffs-col__1">
+						<b>Время предоставления сервисов (UTC +03:00, Москва)</b>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<b>9:00 – 18:00 <br>(Пн. – Пт.)</b>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<b>9:00 – 18:00 <br>(Пн. – Вс.)</b>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<b>24х7</b>
+					</div>
+				</div>
+				<div class="tariffs-row tariffs-line">
+					<div class="tariffs-col tariffs-col__1"></div>
+					<div class="tariffs-col tariffs-col__2"></div>
+					<div class="tariffs-col tariffs-col__3"></div>
+					<div class="tariffs-col tariffs-col__4"></div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Неограниченное количество обращений</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Консультации по установке и настройке</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Консультации по функциональным возможностям</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Консультации по настройке</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Консультации по конфигурированию и разработке на платформе Creatio, Террасофт </span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-minus"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Выявление дефектов в ПО и передача их для устранения</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Предоставление новых версий и критических патчей</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-minus"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Доступ к персональному кабинету на портале самообслуживания</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Доступ к базе знаний Creatio Community</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-minus"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Offline-поддержка </span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Online-поддержка</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-minus"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Управление приоритетами</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="tariffs-row">
+					<div class="tariffs-col tariffs-col__1">
+						<span>Выделенный Customer Success Manager</span>
+					</div>
+					<div class="tariffs-col tariffs-col__2">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__3">
+						<div class="tariffs-has"></div>
+					</div>
+					<div class="tariffs-col tariffs-col__4">
+						<div class="tariffs-has"></div>
+					</div>
+				</div>
+				<div class="implementation-block implementation-green">
+					<div class="implementation-info">
+						<div class="implementation-ico"><img src="{% static 'img/implementation/ico-5.svg' %}" alt=""></div>
+						<h3 class="implementation-title">Дополнительные условия</h3>
+					</div>
+					<div class="implementation-descr">
+						<ul>
+							<li>Приобретение пакета поддержки является обязательным.</li>
+							<li>Все консультации предоставляются одному ответственному контактному лицу со стороны клиента либо всем сертифицированным лицам партнёра, согласно правил сертификации.</li>
+							<li>Пакеты технической поддержки приобретаются на срок не менее одного года на все продукты, которыми владеет клиент. Приобретение поддержки на чаcть продуктов не допускается.</li>
+							<li>Под периодом «год» следует понимать период в 360 календарных дней.</li>
+							<li>В момент приобретения технической поддержки клиент должен обладать одной из официальных версий продуктов линейки Террасофт.</li>
+							<li>Обновление версий подразумевает бесплатное предоставление лицензий на обновление версии продуктов и не включает в себя дополнительные работы (кроме консультационных услуг), которые могут быть с этим связаны.</li>
+							<li>Указанная стоимость не включает налоги и сборы (например, НДС), применяемые согласно законодательства.</li>
+						</ul>
+					</div>
+				</div><!-- block -->
+			</div>
+		</div>
+	</section>
+	<!-- end page -->
+
+{% endblock %}
+
+
+
+

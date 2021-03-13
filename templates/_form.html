@@ -1,0 +1,74 @@
+{% load static %}
+<form >
+						<div class="contacts-form__wrap modal-form">
+							<span class="contacts-subtitle">Мы всегда рады помочь!</span>
+							<div class="input-block"><!-- add class input-error -->
+								<label for="i-11">Фамилия</label>
+								<input id="i-11" type="text" name="name" placeholder="Ваша фамилия" required>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="input-block"><!-- add class input-error -->
+								<label for="i-22">Почта</label>
+								<input id="i-22" type="email" name="email" placeholder="Электронный адрес" required>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="input-block drop-input"><!-- add class input-error -->
+								<label for="i-55">Номер телефона</label>
+								<div class="input-block__wrap">
+									<input id="i-55" class="input-tel drop-tel" type="text" name="phone" value="+7" required>
+									<div class="drop">
+										<div class="drop-top"><img src="{% static 'img/flag/free-icon-russia-197408.svg' %}" alt=""></div>
+										<ul class="drop-info">
+											<li class="active">
+												<b><img src="{% static 'img/flag/free-icon-russia-197408.svg' %}" alt=""></b>
+												<i>Россия</i>
+												<span>+7</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-ukraine-197572.svg' %}" alt=""></b>
+												<i>Украина</i>
+												<span>+380</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-belarus-197527.svg' %}" alt=""></b>
+												<i>Беларусь</i>
+												<span>+375</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-kazakhstan-197603.svg' %}" alt=""></b>
+												<i>Казахстан</i>
+												<span>+7</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-lithuania-197612.svg' %}" alt=""></b>
+												<i>Литва</i>
+												<span>+370</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-latvia-197605.svg' %}" alt=""></b>
+												<i>Латвия</i>
+												<span>+371</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-estonia-197379.svg' %}" alt=""></b>
+												<i>Эстония</i>
+												<span>+372</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="contacts-checkbox">
+								<div class="checkbox">
+									<input type="checkbox" checked>
+									<span class="checkbox-ico"></span>
+									<p>Я согласен на обработку и хранение персональных данных</p>
+								</div>
+							</div>
+                            <input id="i-44" type="hidden" name="primuser" value="modal">
+							<div class="button-center">
+							  <button class="primary-btn"><span>Заказать презентацию</span></button>
+							</div>
+						</div>
+					</form>

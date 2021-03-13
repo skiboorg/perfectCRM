@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>PerfectCRM – Главная</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">-->
+    <link rel="shortcut icon" href="{% static 'img/favicon/favicon.png' %}" type="image/x-icon">
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+    <meta name="theme-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+</head>
+<body>
+{% if indexPage %}
+    <ul class="pagePagination">
+        <li><a href="#main" class="active">
+            <span class="pagePagination-num">1</span>
+        </a></li>
+        <li><a href="#about">
+            <span class="pagePagination-num">2</span>
+        </a></li>
+        <li><a href="#advantages">
+            <span class="pagePagination-num">3</span>
+        </a></li>
+        <li><a href="#functionality">
+            <span class="pagePagination-num">4</span>
+        </a></li>
+        <li><a href="#personalAccount">
+            <span class="pagePagination-num">5</span>
+        </a></li>
+        <li><a href="#cost">
+            <span class="pagePagination-num">6</span>
+        </a></li>
+        <li><a href="#testimonials">
+            <span class="pagePagination-num">7</span>
+        </a></li>
+    </ul>
+{% endif %}
+{% include 'header.html' %}
+{% block content %}
+{% endblock %}
+{% include 'footer.html' %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="{% static 'js/scripts.min.js' %}"></script>
+<script>
+    function sendForm(data){
+        $.post({
+            url: 'https://gate.mediasoft.su:8080',
+            data: JSON.stringify (data),
+            success: function(data) { alert('Спасибо за обращение'); },
+            error: function(data) { console.log(data); alert('Что-то пошло не так. Воспользуйтесь альтернативным способом связи или  попробуйте позднее.'); },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    }
+    $('.index-form .primary-btn').click(function(){
+        let data = {
+            "nameuser": $('#i-1').val(),
+            "mailuser": $('#i-2').val(),
+            "phoneuser": $('#i-3').val(),
+            "primuser": $('#i-4').val(),
+            "country" :$('#i-5').val()
+        };
+        sendForm(data)
+        return false;
+    })
+    $('.modal-form .primary-btn').click(function(){
+        let data = {
+            "nameuser": $('#i-11').val(),
+            "mailuser": $('#i-22').val(),
+            "phoneuser": $('#i-33').val(),
+            "primuser": $('#i-44').val(),
+            "country" :$('#i-55').val()
+        };
+        console.log(data)
+        sendForm(data)
+        $.fancybox.close()
+        return false;
+    })
+</script>
+</body>
+</html>
+

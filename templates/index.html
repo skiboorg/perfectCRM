@@ -1,0 +1,371 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block content %}
+   <!-- start main -->
+	<section class="main section-scroll" id="main">
+		<div class="main-bg"><img src="{% static 'img/main-bg.svg' %}" alt=""></div>
+		<div class="wrapper">
+			<div class="main-info">
+
+				<h1 class="main-title"data-aos="fade-up" data-aos-duration="500" data-aos-once="true">Perfect CRM</h1>
+				<p data-aos="fade-up" data-aos-duration="500" data-aos-once="true">{{ block1.text }}.</p>
+				<div data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<a data-fancybox data-src="#modal-test" href="javascript:;" class="primary-btn"><span>Заказать презентацию</span></a>
+				</div>
+				<div class="main-phone" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<a href="tel:{{ block1.phone }}">{{ block1.phone }}*</a>
+					<img src="{% static 'img/phone-line.svg' %}" alt="">
+				</div>
+			</div>
+			<div class="main-img img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+			  <div class="main-img__wrap"
+			   	data-vide-bg="mp4:  {{ block1.video.url }} , poster: video/video"
+			  	data-vide-options="posterType: jpg, position: 50% 50%">
+			  </div>
+			</div>
+		</div>
+	</section>
+	<!-- end main -->
+	<!-- start about -->
+	<section class="about about-1 section-scroll" id="about">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{{ block2.blockIcon.url }}" alt=""></div>
+				<span class="section-subtitle">{{ block2.title }}</span>
+				<h2 class="section-title">{{ block2.subtitle }}</h2>
+			</div>
+            {% for f in block2.features.all %}
+			<div class="about-row {% if  forloop.counter|divisibleby:2 %}about-second{% endif %}">
+
+				<div class="about-info">
+
+					<span class="about-title">{{ f.title }}</span>
+					<ul>
+						{{ f.text | safe}}
+					</ul>
+				</div>
+				<div class="about-img"><img src="{{ f.blockImage.url }}" alt=""></div>
+			</div>
+            {% endfor %}
+
+		</div>
+	</section>
+	<!-- end about -->
+	<!-- start advantages -->
+	<section class="advantages section-scroll advantages-1" id="advantages">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{{ block3.blockIcon.url }}" alt=""></div>
+				<span class="section-subtitle">{{ block3.title }}</span>
+				<h2 class="section-title">{{ block3.subtitle }}</h2>
+			</div>
+			<div class="advantages-row">
+				<div class="advantages-col" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="advantages-wrap">
+						<div class="advantages-ico"><img src="{% static 'img/advantages/advantages-ico-1.svg' %}" alt=""></div>
+						<span class="advantages-percent">
+							{{ block3.leftPercent }}
+							<sup>%</sup>
+						</span>
+						<p>{{ block3.leftText  | safe}}</p>
+					</div>
+				</div><!-- col -->
+				<div class="advantages-col" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="advantages-wrap">
+						<div class="advantages-ico"><img src="{% static 'img/advantages/advantages-ico-2.svg' %}" alt=""></div>
+						<span class="advantages-percent">
+							{{ block3.centerPercent }}
+							<sup>%</sup>
+						</span>
+						<p>{{ block3.centerText  | safe}}</p>
+					</div>
+				</div><!-- col -->
+				<div class="advantages-col" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="advantages-wrap">
+						<div class="advantages-ico"><img src="{% static 'img/advantages/advantages-ico-3.svg' %}" alt=""></div>
+						<span class="advantages-percent">
+							{{ block3.rightPercent }}
+							<sup>%</sup>
+						</span>
+						<p>{{ block3.rightText  | safe}}</p>
+					</div>
+				</div><!-- col -->
+			</div>
+		</div>
+		<div class="advantages-bg advantages-bg__1" style="background-image: url({% static 'img/advantages/advantages-bg-1.svg' %});" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"></div>
+		<div class="advantages-bg advantages-bg__2" style="background-image: url({% static 'img/advantages/advantages-bg-2.svg' %});" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"></div>
+	</section>
+	<!-- end advantages -->
+	<!-- start functionality -->
+	<section class="functionality section-scroll" id="functionality">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="section-ico"><img src="{{ block4.blockIcon.url }}" alt=""></div>
+				<span class="section-subtitle">{{ block4.title }}</span>
+				<h2 class="section-title">{{ block4.subtitle }}</h2>
+			</div>
+			<div class="functionality-row allTabs" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="functionality-sidebar">
+					<ul class="functionality-list tab-list">
+                        {% for f in block4.features.all %}
+						<li><a href="#tab-{{ forloop.counter }}" {% if forloop.counter == 1 %} class="active"{% endif %}>{{ f.title }}</a></li>
+                        {% endfor %}
+
+					</ul>
+				</div>
+				<div class="functionality-content">
+                     {% for f in block4.features.all %}
+					<div class="functionality-tab tab {% if forloop.counter == 1 %}tab-active {% endif %}" id="tab-{{ forloop.counter }}">
+						<ul>
+							{{ f.text | safe }}
+						</ul>
+                        {% if f.video %}
+						<div id="functionality-video-{{ forloop.counter}}" class="functionality-img functionality-video img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+						  <div class="main-img__wrap"
+						   	data-vide-bg="mp4: {{ f.video.url }}, poster: img/functionality/functionality-1-min"
+						  	data-vide-options="posterType: png, position: 50% 50%">
+						  </div>
+						</div>
+                    {% else %}
+                            <div class="functionality-img img-shadow">
+							<img src="{{ f.image.url }}" alt="">
+						</div>
+                    {% endif %}
+					</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end functionality -->
+	<!-- start integration -->
+	<section class="integration">
+		<div class="integration-bg"><img src="{% static 'img/integration/integration-bg.svg' %}" alt=""></div>
+		<div class="scene" id="scene">
+			<div data-depth="0.23" class="integration-img integration-img__1"><img src=" {% static 'img/integration/ico-1.svg' %}" alt=""></div>
+			<div data-depth="0.43" class="integration-img integration-img__2"><img src="{% static 'img/integration/ico-2.svg' %}" alt=""></div>
+			<div data-depth="0.28" class="integration-img integration-img__3"><img src="{% static 'img/integration/ico-3.svg' %}" alt=""></div>
+			<div data-depth="0.52" class="integration-img integration-img__4"><img src="{% static 'img/integration/ico-4.svg' %}" alt=""></div>
+		</div>
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{% static '' %}img/section/section-ico-4.svg" alt=""></div>
+				<span class="section-subtitle">Решение сложных задач</span>
+				<h2 class="section-title">Бесшовная интеграция</h2>
+				<p>Никаких выгрузок в файл и прочих костылей, бухгалтер работает в своем интерфейсе и имеет доступ и возможность проверки документов, сформированных менеджерами.</p>
+			</div>
+			<ul class="integration-list" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-1.svg'%}" alt=""></span>
+					Эквайринг Яндекс.Касса
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-2.svg'%}" alt=""></span>
+					Экспорт документов
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-3.svg'%}" alt=""></span>
+					Интеграция с IP-телефонией
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-4.svg'%}" alt=""></span>
+					Маршрутизация доставок по картам
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-5.svg'%}" alt=""></span>
+					Эквайринг Робокасса
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-6.svg'%}" alt=""></span>
+					Фискальные регистраторы
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-7.svg'%}" alt=""></span>
+					SMS уведомления
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-8.svg'%}" alt=""></span>
+					Формирование печатных форм документов
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-9.svg'%}" alt=""></span>
+					Оборудование
+				</li>
+				<li>
+					<span class="integration-ico"><img src="{% static 'img/integration/integration-ico-10.svg'%}" alt=""></span>
+					Автозаполнение по ИНН, БИК, поиск и нормализация адресов
+				</li>
+			</ul>
+			<div class="button-center" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<a data-fancybox data-src="#modal-test" href="javascript:;" class="primary-btn"><span>Заказать презентацию</span></a>
+			</div>
+		</div>
+	</section>
+	<!-- end integration -->
+	<!-- start work -->
+	<section class="work">
+		<div class="wrapper">
+			<div class="work-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-head">
+					<div class="section-ico"><img src="{{ block5.blockIcon.url }}" alt=""></div>
+				<span class="section-subtitle">{{ block5.title }}</span>
+				<h2 class="section-title">{{ block5.subtitle }}</h2>
+				</div>
+				<h3 class="work-title">{{ block5.subsubtitle }}</h3>
+				<p>{{ block5.text }}</p>
+			</div>
+			<div class="work-img" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"><img src="{{ block5.image.url }}" alt=""></div>
+		</div>
+	</section>
+	<!-- end work -->
+	<!-- start personalAccount -->
+	<section class="personalAccount section-scroll" id="personalAccount">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{{ block6.blockIcon.url }}" alt=""></div>
+				<span class="section-subtitle">{{ block6.title }}</span>
+				<h2 class="section-title">{{ block6.subtitle }}</h2>
+				<p>{{ block6.subsubtitle }}</p>
+			</div>
+			<div class="personalAccount-row">
+				<div class="personalAccount-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<ul>
+						{{ block6.text | safe }}
+					</ul>
+				</div>
+				<div data-aos="fade-up" data-aos-duration="500" data-aos-once="true" class="personalAccount-img img-shadow"><img src="{% static 'img/personalAccount.png' %}" alt=""></div>
+			</div>
+		</div>
+	</section>
+	<!-- end personalAccount -->
+	<!-- start cost -->
+	{% include '_calc.html' %}
+	<!-- end cost -->
+	<!-- start testimonials -->
+	<section class="testimonials section-scroll" id="testimonials">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				 <div class="section-ico"><img src="{{ settings.feedback_icon.url }}" alt=""></div>
+                <span class="section-subtitle">{{ settings.feedback_title }}</span>
+                <h2 class="section-title">{{ settings.feedback_subtitle }}</h2>
+			</div>
+			<div class="testimonials-all">
+				<div class="testimonials-slider swiper-container">
+					<div class="testimonials-slider__wrapper swiper-wrapper">
+                        {% for f in feedbacks %}
+						<div class="testimonials-slide swiper-slide">
+							<div class="testimonials-wrap">
+								<a href="{{ f.link }}" target="_blank" class="testimonials-img">
+                                    <img src="{{ f.avatar.url }}" alt=""></a>
+								<span class="testimonials-title"><a href="{{ f.link }}" target="_blank">
+                                    {{ f.name }}, <br>{{ f.work }}</a></span>
+								{{ f.text | safe }}
+							</div>
+						</div><!-- slide -->
+						{% endfor %}
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end testimonials -->
+	<!-- start contacts -->
+	<section class="contacts">
+		<div class="wrapper">
+			<div class="contacts-row">
+				<div class="contacts-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="section-head">
+						<div class="section-ico"><img src="{% static 'img/section/section-ico-9.svg' %}" alt=""></div>
+						<span class="section-subtitle">Начините знакомство</span>
+						<h2 class="section-title">Для заказа презентации заполните, пожалуйста, форму справа</h2>
+					</div>
+				</div>
+				<div class="contacts-form" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<form >
+						<div class="contacts-form__wrap index-form">
+							<span class="contacts-subtitle">Мы всегда рады помочь!</span>
+							<div class="input-block"><!-- add class input-error -->
+								<label for="i-1">Фамилия</label>
+								<input id="i-1" type="text" name="name" placeholder="Ваша фамилия" required>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="input-block"><!-- add class input-error -->
+								<label for="i-2">Почта</label>
+								<input id="i-2" type="email" name="email" placeholder="Электронный адрес" required>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="input-block drop-input"><!-- add class input-error -->
+								<label for="i-5">Номер телефона</label>
+								<div class="input-block__wrap">
+									<input id="i-5" class="input-tel drop-tel" type="text" name="phone" value="+7" required>
+									<div class="drop">
+										<div class="drop-top"><img src="{% static 'img/flag/free-icon-russia-197408.svg' %}" alt=""></div>
+										<ul class="drop-info">
+											<li class="active">
+												<b><img src="{% static 'img/flag/free-icon-russia-197408.svg' %}" alt=""></b>
+												<i>Россия</i>
+												<span>+7</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-ukraine-197572.svg' %}" alt=""></b>
+												<i>Украина</i>
+												<span>+380</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-belarus-197527.svg' %}" alt=""></b>
+												<i>Беларусь</i>
+												<span>+375</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-kazakhstan-197603.svg' %}" alt=""></b>
+												<i>Казахстан</i>
+												<span>+7</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-lithuania-197612.svg' %}" alt=""></b>
+												<i>Литва</i>
+												<span>+370</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-latvia-197605.svg' %}" alt=""></b>
+												<i>Латвия</i>
+												<span>+371</span>
+											</li>
+											<li>
+												<b><img src="{% static 'img/flag/free-icon-estonia-197379.svg' %}" alt=""></b>
+												<i>Эстония</i>
+												<span>+372</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<span class="input-text">Ошибка</span>
+							</div>
+							<div class="contacts-checkbox">
+								<div class="checkbox">
+									<input type="checkbox" checked>
+									<span class="checkbox-ico"></span>
+									<p>Я согласен на обработку и хранение персональных данных</p>
+								</div>
+							</div>
+                            <input type="hidden" id="i-4" name="primuser" value="index">
+							<div class="button-center">
+							  <button class="primary-btn"><span>Заказать презентацию</span></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end contacts -->
+
+{% endblock %}
+
+
+
+

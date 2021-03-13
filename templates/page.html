@@ -1,0 +1,105 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="main main-second">
+        <div class="main-bg"><img src="{% static 'img/main-bg.svg' %}" alt=""></div>
+        <div class="wrapper">
+            <div class="main-descr">
+                <h1 class="main-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">{{ content.name }}</h1>
+                <p data-aos="fade-up" data-aos-duration="500" data-aos-once="true">{{ content.subtitle }}</p>
+                <div class="main-descr__img">
+                    <div class="main-img__wrap"
+                         data-vide-bg="mp4: {{ content.video.url }}, poster: video/video"
+                         data-vide-options="posterType: jpg, position: 50% 50%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end main -->
+    <!-- start team -->
+    <section class="team">
+        <div class="wrapper">
+            <h3 class="industry-title" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">{{ content.subsubtitle }}</h3>
+            <div class="team-row">
+                {% for f in content.features.all %}
+                    <div class="team-col" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+                        <div class="team-wrap">
+                            <div class="team-ico"><img src="{{ f.icon.url }}" alt=""></div>
+                            <span class="team-name">{{ f.title }}</span>
+                            {{ f.text | safe }}
+                        </div>
+                    </div><!-- col -->
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- end team -->
+    <!-- start advantages -->
+    {% if content.is_visible %}
+    <section class="advantages continu">
+        <div class="wrapper">
+            <div class="continu-wrap">
+                <div class="continu-img">
+                    {% if content.video_block_video %}
+                    <div class="main-img__wrap"
+                         data-vide-bg="mp4: {{ content.video_block_video.url }}, poster: img/cont-1-min"
+                         data-vide-options="posterType: png, position: 50% 0%">
+                    </div>
+                    {% endif %}
+                {% if content.video_block_image and not content.video_block_video %}
+                    <div class="main-img__wrap">
+                        <img src="{{ content.video_block_image.url }}" alt="">
+                         
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="continu-info">
+                    <h3 class="industry-title industry-title__big">{{ content.video_block_title }}</h3>
+                    <p>{{ content.video_block_text }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="advantages-bg advantages-bg__1" style="background-image: url({% static 'img/advantages/advantages-bg-1.svg' %});" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"></div>
+        <div class="advantages-bg advantages-bg__2" style="background-image: url({% static 'img/advantages/advantages-bg-2.svg' %});" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"></div>
+    </section>
+    {% endif %}
+    <!-- end advantages -->
+    <!-- start functionality -->
+    <section class="industry">
+        <div class="wrapper">
+            {% for b in content.blocks.all %}
+                <div class="industry-row">
+                {% if not forloop.counter|divisibleby:2 %}
+                    <div class="industry-wrap">
+                        <div class="industry-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+                            <h3 class="industry-title">{{ b.title }}</h3>
+                            {{ b.text | safe}}
+                        </div>
+                    </div>
+                    <div class="industry-img img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"><img src="{{ b.image.url }}" alt=""></div>
+                {% else %}
+                     <div class="industry-img img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true"><img src="{{ b.image.url }}" alt=""></div>
+                    <div class="industry-wrap">
+                        <div class="industry-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+                            <h3 class="industry-title">{{ b.title }}</h3>
+                            {{ b.text | safe}}
+                        </div>
+                    </div>
+                {% endif %}
+                </div><!-- industry-second row -->
+            {% endfor %}
+        </div>
+    </section>
+    <!-- end functionality -->
+    {% include '_calc.html' %}
+    <!-- start contacts -->
+    {% include '_contacts.html' %}
+    <!-- end contacts -->
+
+{% endblock %}
+
+
+
+

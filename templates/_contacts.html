@@ -1,0 +1,19 @@
+
+{% load static %}
+
+<section class="contacts {% if addClass %}contacts-second{% endif %}">
+		<div class="wrapper">
+			<div class="contacts-row">
+				<div class="contacts-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					<div class="section-head">
+						<div class="section-ico"><img src="{% static 'img/section/section-ico-9.svg' %}" alt=""></div>
+						<span class="section-subtitle">Начините знакомство</span>
+						<h2 class="section-title">Для заказа презентации заполните, пожалуйста, форму справа</h2>
+					</div>
+				</div>
+				<div class="contacts-form" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+					{% include '_form.html' %}
+				</div>
+			</div>
+		</div>
+	</section>

@@ -1,0 +1,57 @@
+{% load static %}
+<!-- start footer -->
+	<footer class="footer">
+
+		<div class="footer-bg"><img src="{% static 'img/footer-bg.svg' %}" alt=""></div>
+		<div class="wrapper">
+			<div class="footer-top">
+				<div class="footer-col footer-col__1">
+					<div class="footer-logo">
+						<a href="#"><img src="{{ settings.logo_footer.url }}" alt=""></a>
+					</div>
+					<p>{{ settings.footer_text }}</p>
+				</div>
+				<div class="footer-col footer-col__2">
+					<span class="footer-subtitle">{{ settings.footer_company }}</span>
+					{{ settings.footer_contacts |safe }}
+				</div>
+				<div class="footer-col footer-col__3">
+					<span class="footer-subtitle">СОЦСЕТИ</span>
+					<ul class="footer-social">
+						<li><a href="{{ settings.footer_soc1_link }}"><img src="{{ settings.footer_soc1_icon.url }}" alt=""></a></li>
+						<li><a href="{{ settings.footer_soc2_link }}"><img src="{{ settings.footer_soc2_icon.url }}" alt=""></a></li>
+						<li><a href="{{ settings.footer_soc3_link }}"><img src="{{ settings.footer_soc3_icon.url }}" alt=""></a></li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>{{ settings.footer_copyright }}</p>
+				<div class="footer-row">
+					<ul>
+						<li><a href="{{ settings.footer_link1_link }}">{{ settings.footer_link1_text }}</a></li>
+						<li><a href="{{ settings.footer_link2_link }}">{{ settings.footer_link2_text }}</a></li>
+
+					</ul>
+					<p>Дизайн – <a href="#">Anthony's Lab</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- end footer -->
+	<!-- fancybox modal -->
+	<div style="display: none;" id="modal-test" class="modal">
+		<div class="modal-close">
+		{% include '_form.html' %}
+		</div>
+	</div>
+	<!-- cookie -->
+{% if not request.session.agree %}
+	<div class="cookie">
+		<div class="cookie-wrap">
+
+			<p>Мы используем файлы «cookies» и похожие технологии на нашем веб-сайте, чтобы улучшить работу и повысить эффективность сайта. Используя этот сайт, Вы соглашаетесь с размещением cookie-файлов на Вашем компьютере в соответствии с условиями настоящего правила.</p>
+			<a href="{% url 'set_cookie' %}" class="primary-btn"><span>Принять</span></a>
+		</div>
+	</div>
+{% endif %}

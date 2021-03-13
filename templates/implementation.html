@@ -1,0 +1,110 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start main -->
+	<section class="main main-implementation">
+		<div class="main-bg"><img src="{% static 'img/main-bg.svg' %} " alt=""></div>
+		<div class="wrapper">
+			<div class="main-info" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<h1 class="main-implementation__title">Внедрение системы Perfect CRM</h1>
+				<p>Внедрение новой системы управления предприятием обычно вызывает стресс у сотрудников, так как, зачастую, новыми процедурами вытесняется их привычный уклад работы.</p>
+				<p>Но при использовании проверенной методологии внедрения Perfect CRM процесс внедрения становится прозрачным и эффективным. </p>
+			</div>
+			<div class="main-img img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+			  <div class="main-img__wrap"
+			   	data-vide-bg="mp4: video/main-2, poster: video/video"
+			  	data-vide-options="posterType: jpg, position: 50% 50%">
+			  </div>
+			</div>
+		</div>
+	</section>
+	<!-- end main -->
+	<!-- start implementation -->
+	<section class="implementation">
+		<div class="wrapper">
+			<div class="section-head" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
+				<div class="section-ico"><img src="{% static 'img/section/section-ico-10.svg' %}" alt=""></div>
+				<h2 class="section-title">Основные этапы внедрения</h2>
+				<p>Внедрение новой системы управления предприятием обычно вызывает стресс у сотрудников, так как, зачастую, новыми процедурами вытесняется их привычный уклад работы. Но при использовании проверенной методологии внедрения Perfect CRM процесс внедрения становится прозрачным и эффективным.</p>
+			</div>
+			<div class="implementation-bar">
+				<div class="implementation-bar__img"><img src="{% static 'img/implementation/line.svg' %}" alt=""></div>
+				<div class="implementation-bar__col">
+					<div class="implementation-bar__ico"><img src="{% static 'img/implementation/ico-1.svg' %}" alt=""></div>
+					<span class="implementation-bar__title">Подготовка и сбор информации</span>
+				</div>
+				<div class="implementation-bar__col">
+					<div class="implementation-bar__ico"><img src="{% static 'img/implementation/ico-2.svg' %}" alt=""></div>
+					<span class="implementation-bar__title">Итерационный</span>
+				</div>
+				<div class="implementation-bar__col">
+					<div class="implementation-bar__ico"><img src="{% static 'img/implementation/ico-3.svg' %}" alt=""></div>
+					<span class="implementation-bar__title">Обучение</span>
+				</div>
+				<div class="implementation-bar__col">
+					<div class="implementation-bar__ico"><img src="{% static 'img/implementation/ico-4.svg' %}" alt=""></div>
+					<span class="implementation-bar__title">Закрытие проекта</span>
+				</div>
+			</div>
+			<div class="implementation-bg"><img src="{% static 'img/implementation/bg-1.svg' %}" alt=""></div>
+			<div class="implementation-content">
+				<div class="implementation-block implementation-green">
+					<div class="implementation-info">
+						<div class="implementation-ico"><img src="{% static 'img/implementation/ico-5.svg' %}" alt=""></div>
+						<h3 class="implementation-title">Подготовка и сбор информации</h3>
+					</div>
+					<div class="implementation-descr">
+						<p>Определяем приоритеты изначальных требований к системе, анализируем и формируем конкретные задачи, которые стоят перед CRM-системой.</p>
+						<p>Взаимодействие происходит в виде интервью с заинтересованными сотрудниками. Это могут быть менеджеры, руководители отделов и департаментов, руководители проекта внедрения.</p>
+						<p>Определяется продолжительность проекта и составляется Техническое задание и календарный план-график проекта. </p>
+					</div>
+				</div><!-- block -->
+				<div class="implementation-block implementation-orange implementation-second">
+					<div class="implementation-info">
+						<div class="implementation-ico"><img src="{% static 'img/implementation/ico-6.svg' %}" alt=""></div>
+						<h3 class="implementation-title">Итерационный</h3>
+					</div>
+					<div class="implementation-descr">
+						<span class="implementation-subtitle">Выполняется настройка системы, в виде решения серии задач:</span>
+						<ul>
+							<li>Кастомизация и интерфейсов и обучение</li>
+							<li>Программирование алгоритмов бизнес-процессов</li>
+							<li>Интеграция с другими системами</li>
+							<li>Перенос информации</li>
+						</ul>
+						<p>Данный этап состоит из решения задач, оперативно приносящих результат. Каждая итерация завершается демонстрацией заказчику с целью проверки.</p>
+						<p>Суть в том, чтобы процесс внедрения минимально отвлекать персонал от основного рабочего процесса. В ходе выполнения итераций понимание содержания конечного продукта может меняться, поэтому добавляются все новые и новые функциональные возможности.</p>
+					</div>
+				</div><!-- block -->
+				<div class="implementation-block implementation-blue">
+					<div class="implementation-info">
+						<div class="implementation-ico"><img src="{% static 'img/implementation/ico-7.svg' %}" alt=""></div>
+						<h3 class="implementation-title">Обучение</h3>
+					</div>
+					<div class="implementation-descr">
+						<p>Обучение сотрудников происходит на территории заказчика или удаленно. Обучение может проводиться как групповое и/или индивидуально для ключевых пользователей. Способ проведения определяется индивидуально исходя из специфики работы компании.</p>
+						<p>Кроме обучения работе в системе предоставляется документация: руководство пользователя, руководство администратора, при необходимости также предоставляются видео-уроки по работе с системой, в том числе по доработанному функционалу системы.</p>
+					</div>
+				</div><!-- block -->
+				<div class="implementation-block implementation-purple implementation-second">
+					<div class="implementation-info">
+						<div class="implementation-ico"><img src="{% static 'img/implementation/ico-8.svg' %}" alt=""></div>
+						<h3 class="implementation-title"><span>Закрытие проекта</span></h3>
+					</div>
+					<div class="implementation-descr">
+						<p>На личной встрече эксперты компании-интегратора продемонстрируют результаты проекта и функциональность системы.</p>
+						<p>После подписания документов активируют техническую поддержку вашего решения.</p>
+						<p>С этого дня в системе начинают работать все ваши сотрудники. Ваша система будет сопровождаться выделенным менеджером с нашей стороны и службой поддержки — HelpDesk</p>
+					</div>
+				</div><!-- block -->
+			</div>
+		</div>
+	</section>
+	<!-- end implementation -->
+
+{% endblock %}
+
+
+
+

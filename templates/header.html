@@ -1,0 +1,65 @@
+{% load static %}
+<!-- start header -->
+<div class="topPanel">
+		<div class="wrapper">
+			<ul>
+				<li class="topPanel-mob"><a target="_blank" href="{{ header.innerBtn1Link }}"><span>{{ header.innerBtn1Text }}</span></a></li>
+				<li><a target="_blank" href="{{ header.innerBtn2Link }}"><span>{{ header.innerBtn2Text }}</span></a></li>
+				<li class="topPanel-li"><a target="_blank" href="{{ header.innerBtn3Link }}">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21"><defs><style>.a,.c{fill:none;stroke:#707070;}.a{stroke-miterlimit:10;}.b{clip-path:url(#a);}</style><clipPath id="a"><circle class="a" cx="10" cy="10" r="10" transform="translate(382.893 229.652)"/></clipPath></defs><g transform="translate(-382.393 -229.152)"><g class="b"><circle class="c" cx="11" cy="11" r="11" transform="translate(381.893 242.652)"/><circle class="c" cx="3" cy="3" r="3" transform="translate(389.893 233.652)"/></g><circle class="a" cx="10" cy="10" r="10" transform="translate(382.893 229.652)"/></g></svg>
+					<span>{{ header.innerBtn3Text }}</span>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+	<header class="header">
+		<div class="wrapper header-wrapper">
+			<div class="header-logo">
+				<a href="/"><img src="{{ header.logo.url }}" alt=""></a>
+			</div>
+			<div class="header-row">
+
+				<a href="{{ header.supportBtnLink }}" class="header-link">{{ header.supportBtnText }}</a>
+				<a data-fancybox data-src="#modal-test" href="javascript:;" class="header-btn">Онлайн заявка</a>
+			</div>
+			<div class="header-bar">
+				<span></span>
+			</div>
+		</div>
+			<div class="header-menu">
+			<div class="header-br"></div>
+			<div class="wrapper">
+            {% if pages %}
+				<span class="header-menu__title">Отраслевые решения</span>
+				<div class="header-menu__row">
+                    {% for p in pages %}
+					<div class="header-col">
+						<a href="{% url 'page' p.name_slug %}" class="header-wrap">
+							<img src="{{ p.header_btn_img.url }}" alt="">
+							<span class="header-wrap__title">{{ p.name }}</span>
+							<p>{{ p.header_btn_text }}</p>
+						</a>
+					</div><!-- col -->
+					{% endfor %}
+				</div>
+            {% endif %}
+            <span class="header-menu__title">Услуги</span>
+				<div class="header-menu__row">
+                    {% for s in header.services.all %}
+					<div class="header-col">
+						<a href="{{ s.link }}" class="header-wrap">
+							<img src="{{ s.image.url }}" alt="">
+							<span class="header-wrap__title">{{ s.name }}</span>
+							<p>{{ s.text }}</p>
+						</a>
+					</div><!-- col -->
+					{% endfor %}
+				</div>
+
+				<div class="header-mob">
+					<a href="#" class="header-btn">Онлайн заявка</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- end header -->
