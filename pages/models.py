@@ -22,6 +22,7 @@ class Settings(models.Model):
     footer_link1_link = models.CharField('URL ссылки', max_length=255, blank=False, null=True)
     footer_link2_text = models.CharField('Текст ссылки', max_length=255, blank=False, null=True)
     footer_link2_link = models.CharField('URL ссылки', max_length=255, blank=False, null=True)
+    implementation_video = models.FileField('Видео на старнице внедрение ', blank=True, null=True, upload_to='videos/')
 
     def __str__(self):
         return f'Настройка общих блоков'

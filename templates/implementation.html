@@ -11,12 +11,14 @@
 				<p>Внедрение новой системы управления предприятием обычно вызывает стресс у сотрудников, так как, зачастую, новыми процедурами вытесняется их привычный уклад работы.</p>
 				<p>Но при использовании проверенной методологии внедрения Perfect CRM процесс внедрения становится прозрачным и эффективным. </p>
 			</div>
+            {% if settings.implementation_video %}
 			<div class="main-img img-shadow" data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
 			  <div class="main-img__wrap"
-			   	data-vide-bg="mp4: video/main-2, poster: video/video"
+			   	data-vide-bg="mp4: {{ settings.implementation_video.url }}, poster: video/video"
 			  	data-vide-options="posterType: jpg, position: 50% 50%">
 			  </div>
 			</div>
+            {% endif %}
 		</div>
 	</section>
 	<!-- end main -->
