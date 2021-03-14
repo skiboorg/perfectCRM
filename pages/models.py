@@ -157,8 +157,8 @@ class Block5(models.Model):
         return f'Настройка блока'
 
     class Meta:
-        verbose_name = "6. Личный кабинет"
-        verbose_name_plural = "6. Личный кабинет"
+        verbose_name = "6. Возможности платформы"
+        verbose_name_plural = "6. Возможности платформы"
 
 class Block6(models.Model):
     blockIcon = models.FileField('Иконка блока ', blank=False, null=True, upload_to='icons/')
@@ -172,8 +172,8 @@ class Block6(models.Model):
         return f'Настройка блока'
 
     class Meta:
-        verbose_name = "7. Возможности платформы"
-        verbose_name_plural = "7. Возможности платформы"
+        verbose_name = "7. Личный кабинет"
+        verbose_name_plural = "7. Личный кабинет"
 
 class Block7(models.Model):
     blockIcon = models.FileField('Иконка блока ', blank=False, null=True, upload_to='icons/')
