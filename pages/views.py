@@ -5,7 +5,7 @@ from .models import *
 
 def set_cookie(request):
     request.session['agree'] = 'ok'
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponseRedirect('/')
 
 def page(request,name_slug):
     addClass = True
