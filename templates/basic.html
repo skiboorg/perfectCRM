@@ -89,6 +89,7 @@
             contentType: "application/json",
             dataType: 'json'
         });
+            $.fancybox.close()
         }
 
     }
@@ -116,7 +117,7 @@
         data.mailuser ?  $('#modal-i-22').removeClass('error') : $('#modal-i-22').addClass('error')
         data.phoneuser.length>=12 ?  $('#modal-i-55').removeClass('error') : $('#modal-i-55').addClass('error')
         sendForm(data)
-        $.fancybox.close()
+
         return false;
     })
 </script>
