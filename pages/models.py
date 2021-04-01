@@ -231,7 +231,7 @@ class Page(models.Model):
 
     is_visible = models.BooleanField('Отображать видео блок', default=False)
     video_block_title = models.CharField('Заголовок видео блока', max_length=255, blank=True, null=True)
-    video_block_text = models.CharField('Текст видео блока', max_length=255, blank=True, null=True)
+    video_block_text = models.TextField('Текст видео блока', blank=True, null=True)
     video_block_video = models.FileField('Видео в видео блоке', blank=True, null=True, upload_to='page/')
     video_block_image = models.FileField('Картинка в видео блоке (если видео файл выбран, картинка игнорируется)', blank=True, null=True, upload_to='page/')
     is_active = models.BooleanField('Показывать страницу', default=True)
