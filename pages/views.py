@@ -40,6 +40,7 @@ def tariffs(request):
     pages = Page.objects.filter(is_active=True)
     settings = Settings.objects.first()
     header = Header.objects.first()
+    pageName = 'tariff'
     return render(request, 'tariffs.html', locals())
 
 
