@@ -78,9 +78,9 @@
 <script src="{% static 'js/scripts.min.js' %}"></script>
 <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=ff1c9e817da1cfdd6cce118a020b413d" charset="UTF-8"></script>
 <script>
-
+    let email_pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
     function sendForm(data){
-        if(data.nameuser && data.mailuser && data.phoneuser.length>=12){
+        if(data.nameuser && data.mailuser && data.phoneuser.length>=12 && email_pattern.test(data.mailuser)){
             $.post({
             url: 'https://gate.mediasoft.su:8080',
             data: JSON.stringify (data),
@@ -102,11 +102,13 @@
         };
         data.nameuser ?  $('#form-i-1').removeClass('error') : $('#form-i-1').addClass('error')
         data.mailuser ?  $('#form-i-2').removeClass('error') : $('#form-i-2').addClass('error')
+        email_pattern.test(data.mailuser) ?  $('#form-i-2').removeClass('error') : $('#form-i-2').addClass('error')
         data.phoneuser.length>=12 ?  $('#form-i-5').removeClass('error') : $('#form-i-5').addClass('error')
         sendForm(data)
         return false;
     })
     $('.modal-form .primary-btn').click(function(){
+
         let data = {
             "nameuser": $('#i-11').val(),
             "mailuser": $('#i-22').val(),
@@ -115,9 +117,9 @@
         };
         data.nameuser ?  $('#modal-i-11').removeClass('error') : $('#modal-i-11').addClass('error')
         data.mailuser ?  $('#modal-i-22').removeClass('error') : $('#modal-i-22').addClass('error')
+        email_pattern.test(data.mailuser) ?  $('#modal-i-22').removeClass('error') : $('#modal-i-22').addClass('error')
         data.phoneuser.length>=12 ?  $('#modal-i-55').removeClass('error') : $('#modal-i-55').addClass('error')
         sendForm(data)
-
         return false;
     })
 </script>
