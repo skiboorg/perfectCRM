@@ -20,21 +20,26 @@
     <meta name="yandex-verification" content="e4f7b454c59a6b44" />
     <meta name="yandex-verification" content="9cfc1225959e836f" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <style>
+        .error{
+            color: red !important;
+        }
+    </style>
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(72919576, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/72919576" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        ym(72919576, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/72919576" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
 </head>
 <body>
@@ -73,8 +78,10 @@
 <script src="{% static 'js/scripts.min.js' %}"></script>
 <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=ff1c9e817da1cfdd6cce118a020b413d" charset="UTF-8"></script>
 <script>
+
     function sendForm(data){
-        $.post({
+        if(data.nameuser && data.mailuser && data.phoneuser.length>=12){
+            $.post({
             url: 'https://gate.mediasoft.su:8080',
             data: JSON.stringify (data),
             success: function(data) { alert('Спасибо за обращение'); },
@@ -82,6 +89,8 @@
             contentType: "application/json",
             dataType: 'json'
         });
+        }
+
     }
     $('.index-form .primary-btn').click(function(){
         let data = {
@@ -90,6 +99,9 @@
             "phoneuser": $('#i-5').val(),
             "primuser": $('#i-4').val()
         };
+        data.nameuser ?  $('#form-i-1').removeClass('error') : $('#form-i-1').addClass('error')
+        data.mailuser ?  $('#form-i-2').removeClass('error') : $('#form-i-2').addClass('error')
+        data.phoneuser.length>=12 ?  $('#form-i-5').removeClass('error') : $('#form-i-5').addClass('error')
         sendForm(data)
         return false;
     })
@@ -100,7 +112,9 @@
             "phoneuser": $('#i-55').val(),
             "primuser": $('#i-44').val()
         };
-        console.log(data)
+        data.nameuser ?  $('#modal-i-11').removeClass('error') : $('#modal-i-11').addClass('error')
+        data.mailuser ?  $('#modal-i-22').removeClass('error') : $('#modal-i-22').addClass('error')
+        data.phoneuser.length>=12 ?  $('#modal-i-55').removeClass('error') : $('#modal-i-55').addClass('error')
         sendForm(data)
         $.fancybox.close()
         return false;
